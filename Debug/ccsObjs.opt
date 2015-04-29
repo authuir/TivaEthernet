@@ -1,0 +1,1 @@
+"./main.obj" "./LCD_module.obj" "./ENC.obj" -l"libc.a" -l"C:\ti\ccsv5\tools\compiler\arm_5.0.4\lib\driverlib.lib" "../tm4c123gh6pm.cmd" 
