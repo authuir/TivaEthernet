@@ -21,6 +21,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "driverlib/gpio.h"
+#include "driverlib/sysctl.h"
 #include "inc/hw_memmap.h"
 
 /*
@@ -96,6 +97,7 @@ MAC, PHY registers marker (7 bit) | bank marker (6-5 bits) | register address (4
 
 // Bank 2 registers
 #define MACON1                      ( 0x00 | BANK2 | MAC_PHY_REG )
+#define MACON2                      ( 0x01 | BANK2 | MAC_PHY_REG )
 #define MACON3                      ( 0x02 | BANK2 | MAC_PHY_REG )
 #define MACON4                      ( 0x03 | BANK2 | MAC_PHY_REG )
 #define MABBIPG                     ( 0x04 | BANK2 | MAC_PHY_REG )
@@ -114,12 +116,12 @@ MAC, PHY registers marker (7 bit) | bank marker (6-5 bits) | register address (4
 #define MIRDH                       ( 0x19 | BANK2 | MAC_PHY_REG )
 
 // Bank 3 registers
-#define MAADR5                      ( 0x00 | BANK3 | MAC_PHY_REG )
-#define MAADR6                      ( 0x01 | BANK3 | MAC_PHY_REG )
+#define MAADR1                      ( 0x00 | BANK3 | MAC_PHY_REG )
+#define MAADR0                      ( 0x01 | BANK3 | MAC_PHY_REG )
 #define MAADR3                      ( 0x02 | BANK3 | MAC_PHY_REG )
-#define MAADR4                      ( 0x03 | BANK3 | MAC_PHY_REG )
-#define MAADR1                      ( 0x04 | BANK3 | MAC_PHY_REG )
-#define MAADR2                      ( 0x05 | BANK3 | MAC_PHY_REG )
+#define MAADR2                      ( 0x03 | BANK3 | MAC_PHY_REG )
+#define MAADR5                      ( 0x04 | BANK3 | MAC_PHY_REG )
+#define MAADR4                      ( 0x05 | BANK3 | MAC_PHY_REG )
 #define EBSTSD                      ( 0x06 | BANK3 )
 #define EBSTCON                     ( 0x07 | BANK3 )
 #define EBSTCSL                     ( 0x08 | BANK3 )
@@ -269,6 +271,21 @@ MAC, PHY registers marker (7 bit) | bank marker (6-5 bits) | register address (4
 #define ENC28J60_BIT_FIELD_CLR      ( 0xA0 )
 #define ENC28J60_SOFT_RESET         ( 0xFF )
 
+// The RXSTART_INIT should be zero. See Rev. B4 Silicon Errata
+// buffer boundaries applied to internal 8K ram
+// the entire available packet buffer space is allocated
+//
+// start with recbuf at 0/
+#define RXSTART_INIT     0x0
+// receive buffer end
+#define RXSTOP_INIT      (0x1FFF-1518-1)
+// start TX buffer at 0x1FFF-0x0600, pace for one full ethernet frame (0~1518 bytes)
+#define TXSTART_INIT     (0x1FFF-1518)
+// stp TX buffer at end of mem
+#define TXSTOP_INIT      0x1FFF
+// max frame length which the conroller will accept:
+#define   MAX_FRAMELEN    1518        // (note: maximum ethernet frame length would be 1518)
+
 #define RST_1 GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_4, GPIO_PIN_4)
 #define RST_0 GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_4, 0)
 
@@ -298,7 +315,20 @@ MAC, PHY registers marker (7 bit) | bank marker (6-5 bits) | register address (4
 
 void ENC_Pin_Init(void);
 uint8_t ENC_Read_ETH(uint8_t In);										//¶ÁÈ¡ETH¼Ä´æÆ÷
-uint8_t ENC_Write_ETH(uint8_t ADDR,uint8_t Val);						//Ð´ÈëETH¼Ä´æÆ÷
+void ENC_Write_ETH(uint8_t ADDR,uint8_t Val);						//Ð´ÈëETH¼Ä´æÆ÷
+
+uint8_t ENC_Read_Op(uint8_t op,uint8_t addr);
+void ENC_Write_Op(uint8_t op,uint8_t addr,uint8_t data);
+void ENC_Read_Buf(uint32_t len,uint8_t* data);
+void ENC_Write_Buf(uint32_t len,uint8_t* data);
+void ENC_Set_Bank(uint8_t bank);
+uint8_t ENC_Read(uint8_t addr);
+void ENC_Write(uint8_t addr,uint8_t data);
+void ENC_PHY_Write(uint8_t addr,uint32_t data);
+uint8_t ENC_Init(uint8_t* macaddr);
+uint8_t ENC_Get_EREVID(void);
+void ENC_Packet_Send(uint32_t len,uint8_t* packet);
+uint32_t ENC_Packet_Receive(uint32_t maxlen,uint8_t* packet);
 
 
 #endif /* ENC_H_ */

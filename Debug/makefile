@@ -112,19 +112,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: N_DAC.out
+all: TivaEthernet.out
 
 # Tool invocations
-N_DAC.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+TivaEthernet.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Linker'
-	"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --diag_warning=225 --display_error_number --diag_wrap=off -z --stack_size=512 -m"N_DAC.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/lib" -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="N_DAC_linkInfo.xml" --rom_model -o "N_DAC.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --diag_warning=225 --display_error_number --diag_wrap=off -z --stack_size=512 -m"TivaEthernet.map" --heap_size=0 -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/lib" -i"C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="TivaEthernet_linkInfo.xml" --rom_model -o "TivaEthernet.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(TMS470_EXECUTABLE_OUTPUTS__QUOTED) "N_DAC.out"
+	-$(RM) $(TMS470_EXECUTABLE_OUTPUTS__QUOTED) "TivaEthernet.out"
 	-$(RM) "ENC.pp" "LCD_module.pp" "main.pp" 
 	-$(RM) "ENC.obj" "LCD_module.obj" "main.obj" 
 	-@echo 'Finished clean'
