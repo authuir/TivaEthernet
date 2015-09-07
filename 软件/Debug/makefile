@@ -8,9 +8,17 @@ CG_TOOL_ROOT := C:/ti/ccsv5/tools/compiler/arm_5.0.4
 
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
+"./Peripheralib/UART.obj" \
+"./Peripheralib/TFT.obj" \
+"./Peripheralib/Relay.obj" \
+"./Peripheralib/PWM.obj" \
+"./Peripheralib/NRF.obj" \
+"./Peripheralib/JDQ.obj" \
+"./Peripheralib/Button.obj" \
+"./Peripheralib/ADC.obj" \
+"./startup_ccs.obj" \
 "./main.obj" \
-"./LCD_module.obj" \
-"./ENC.obj" \
+"./Common.obj" \
 -l"libc.a" \
 -l"C:\ti\ccsv5\tools\compiler\arm_5.0.4\lib\driverlib.lib" \
 "../tm4c123gh6pm.cmd" \
@@ -23,7 +31,9 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include Peripheralib/subdir_vars.mk
 -include subdir_rules.mk
+-include Peripheralib/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -125,8 +135,8 @@ TivaEthernet.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(TMS470_EXECUTABLE_OUTPUTS__QUOTED) "TivaEthernet.out"
-	-$(RM) "ENC.pp" "LCD_module.pp" "main.pp" 
-	-$(RM) "ENC.obj" "LCD_module.obj" "main.obj" 
+	-$(RM) "Common.pp" "main.pp" "startup_ccs.pp" "Peripheralib\ADC.pp" "Peripheralib\Button.pp" "Peripheralib\JDQ.pp" "Peripheralib\NRF.pp" "Peripheralib\PWM.pp" "Peripheralib\Relay.pp" "Peripheralib\TFT.pp" "Peripheralib\UART.pp" 
+	-$(RM) "Common.obj" "main.obj" "startup_ccs.obj" "Peripheralib\ADC.obj" "Peripheralib\Button.obj" "Peripheralib\JDQ.obj" "Peripheralib\NRF.obj" "Peripheralib\PWM.obj" "Peripheralib\Relay.obj" "Peripheralib\TFT.obj" "Peripheralib\UART.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

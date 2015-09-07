@@ -7,33 +7,33 @@ CMD_SRCS += \
 ../tm4c123gh6pm.cmd 
 
 C_SRCS += \
-../ENC.c \
-../LCD_module.c \
-../main.c 
+../Common.c \
+../main.c \
+../startup_ccs.c 
 
 OBJS += \
-./ENC.obj \
-./LCD_module.obj \
-./main.obj 
+./Common.obj \
+./main.obj \
+./startup_ccs.obj 
 
 C_DEPS += \
-./ENC.pp \
-./LCD_module.pp \
-./main.pp 
+./Common.pp \
+./main.pp \
+./startup_ccs.pp 
 
 C_DEPS__QUOTED += \
-"ENC.pp" \
-"LCD_module.pp" \
-"main.pp" 
+"Common.pp" \
+"main.pp" \
+"startup_ccs.pp" 
 
 OBJS__QUOTED += \
-"ENC.obj" \
-"LCD_module.obj" \
-"main.obj" 
+"Common.obj" \
+"main.obj" \
+"startup_ccs.obj" 
 
 C_SRCS__QUOTED += \
-"../ENC.c" \
-"../LCD_module.c" \
-"../main.c" 
+"../Common.c" \
+"../main.c" \
+"../startup_ccs.c" 
 
 
