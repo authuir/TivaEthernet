@@ -1,7 +1,7 @@
 ##TivaEthernet是什么?
 * 一个基于TI公司的TM4C123G系列Cortex-M4芯片带互联网功能的嵌入式RTOS操作系统
 
-##MaHua有哪些功能？
+##TivaEthernet有哪些功能？
 
 * 小型嵌入式的互联网访问功能
     *  内置`TCP/IP协议栈`
