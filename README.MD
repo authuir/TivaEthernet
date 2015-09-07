@@ -16,3 +16,5 @@
 
 * 邮件: i@authuir.com
 
+##备注
+本项目是属于<a href="https://github.com/authuir/AI-Lab">AI-Lab</a>SIT项目的一个小功能
