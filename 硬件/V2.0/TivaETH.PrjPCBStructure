@@ -1,4 +1,6 @@
 Record=SheetSymbol|SourceDocument=TivaETH.SchDoc|Designator=CH340G|SchDesignator=CH340G|FileName=CH340G.SchDoc|SymbolType=Normal|RawFileName=CH340G.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=TivaETH.SchDoc|Designator=Enc28j60|SchDesignator=Enc28j60|FileName=Enc28j60.SchDoc|SymbolType=Normal|RawFileName=Enc28j60.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
 Record=SheetSymbol|SourceDocument=TivaETH.SchDoc|Designator=JLink-OB|SchDesignator=JLink-OB|FileName=JTAG.SchDoc|SymbolType=Normal|RawFileName=JTAG.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
 Record=SheetSymbol|SourceDocument=TivaETH.SchDoc|Designator=MCU|SchDesignator=MCU|FileName=MCU.SchDoc|SymbolType=Normal|RawFileName=MCU.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=TivaETH.SchDoc|Designator=Power|SchDesignator=Power|FileName=Power.SchDoc|SymbolType=Normal|RawFileName=Power.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
 Record=TopLevelDocument|FileName=TivaETH.SchDoc
