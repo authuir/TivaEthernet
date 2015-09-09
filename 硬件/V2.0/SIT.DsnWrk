@@ -1,0 +1,8 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=TivaETH.PrjPCB
+[Project2]
+ProjectPath=..\..\Altium\TivaEthernet.PrjPCB
+[Project3]
+ProjectPath=..\..\Altium\SITÆ÷¼þ·â×°\SITÆ÷¼þ.LibPkg
