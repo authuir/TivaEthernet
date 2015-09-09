@@ -22,6 +22,7 @@ Peripheralib/NRF.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/gpi
 Peripheralib/NRF.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/interrupt.h
 Peripheralib/NRF.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/timer.h
 Peripheralib/NRF.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/systick.h
+Peripheralib/NRF.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/adc.h
 Peripheralib/NRF.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/rom.h
 Peripheralib/NRF.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/pin_map.h
 Peripheralib/NRF.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/uart.h
@@ -53,6 +54,7 @@ C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/gpio.h:
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/interrupt.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/timer.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/systick.h: 
+C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/adc.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/rom.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/pin_map.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/uart.h: 

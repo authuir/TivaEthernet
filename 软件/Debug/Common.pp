@@ -22,6 +22,7 @@ Common.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/gpio.h
 Common.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/interrupt.h
 Common.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/timer.h
 Common.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/systick.h
+Common.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/adc.h
 Common.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/rom.h
 Common.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/pin_map.h
 Common.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/uart.h
@@ -53,6 +54,7 @@ C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/gpio.h:
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/interrupt.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/timer.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/systick.h: 
+C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/adc.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/rom.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/pin_map.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/uart.h: 

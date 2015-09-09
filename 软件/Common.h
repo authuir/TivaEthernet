@@ -29,6 +29,7 @@
 #include "driverlib/interrupt.h"
 #include "driverlib/timer.h"
 #include "driverlib/systick.h"
+#include "driverlib/adc.h"
 #include "driverlib/rom.h"
 #include "driverlib/pin_map.h"
 #include "driverlib/uart.h"
