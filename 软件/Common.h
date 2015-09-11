@@ -15,6 +15,8 @@
 #define PART_TM4C123GH6PM
 #endif
 
+#define SOFT_SSI
+
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdlib.h>
