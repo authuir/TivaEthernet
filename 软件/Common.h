@@ -21,6 +21,8 @@
 #include <string.h>
 #include <cmath>
 
+#include "inc/hw_types.h"
+#include "inc/hw_gpio.h"
 #include "inc/tm4c123gh6pm.h"
 #include "inc/hw_memmap.h"
 #include "driverlib/fpu.h"
@@ -39,5 +41,6 @@
 #include "JDQ.h"
 #include "NRF.h"
 #include "TFT.h"
+#include "Button.h"
 
 #endif /* COMMON_H_ */

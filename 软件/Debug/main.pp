@@ -14,6 +14,8 @@ main.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/cmath
 main.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/math.h
 main.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/ymath.h
 main.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/mathcpp.h
+main.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/hw_types.h
+main.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/hw_gpio.h
 main.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/tm4c123gh6pm.h
 main.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/hw_memmap.h
 main.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/fpu.h
@@ -31,6 +33,7 @@ main.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/UART.h
 main.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/JDQ.h
 main.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/NRF.h
 main.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/TFT.h
+main.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/Button.h
 
 ../main.c: 
 ../Common.h: 
@@ -46,6 +49,8 @@ C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/cmath:
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/math.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/ymath.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/mathcpp.h: 
+C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/hw_types.h: 
+C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/hw_gpio.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/tm4c123gh6pm.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/hw_memmap.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/fpu.h: 
@@ -63,3 +68,4 @@ D:/Arduino/TI7/TivaEthernet/Peripheralib/UART.h:
 D:/Arduino/TI7/TivaEthernet/Peripheralib/JDQ.h: 
 D:/Arduino/TI7/TivaEthernet/Peripheralib/NRF.h: 
 D:/Arduino/TI7/TivaEthernet/Peripheralib/TFT.h: 
+D:/Arduino/TI7/TivaEthernet/Peripheralib/Button.h: 

@@ -14,6 +14,8 @@ Peripheralib/JDQ.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/cmath
 Peripheralib/JDQ.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/math.h
 Peripheralib/JDQ.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/ymath.h
 Peripheralib/JDQ.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/mathcpp.h
+Peripheralib/JDQ.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/hw_types.h
+Peripheralib/JDQ.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/hw_gpio.h
 Peripheralib/JDQ.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/tm4c123gh6pm.h
 Peripheralib/JDQ.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/hw_memmap.h
 Peripheralib/JDQ.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/fpu.h
@@ -31,6 +33,7 @@ Peripheralib/JDQ.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/UART.h
 Peripheralib/JDQ.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/JDQ.h
 Peripheralib/JDQ.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/NRF.h
 Peripheralib/JDQ.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/TFT.h
+Peripheralib/JDQ.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/Button.h
 
 ../Peripheralib/JDQ.c: 
 D:/Arduino/TI7/TivaEthernet/Common.h: 
@@ -46,6 +49,8 @@ C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/cmath:
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/math.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/ymath.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/mathcpp.h: 
+C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/hw_types.h: 
+C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/hw_gpio.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/tm4c123gh6pm.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/inc/hw_memmap.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/fpu.h: 
@@ -63,3 +68,4 @@ D:/Arduino/TI7/TivaEthernet/Peripheralib/UART.h:
 D:/Arduino/TI7/TivaEthernet/Peripheralib/JDQ.h: 
 D:/Arduino/TI7/TivaEthernet/Peripheralib/NRF.h: 
 D:/Arduino/TI7/TivaEthernet/Peripheralib/TFT.h: 
+D:/Arduino/TI7/TivaEthernet/Peripheralib/Button.h: 

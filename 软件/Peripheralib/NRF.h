@@ -8,7 +8,7 @@
 #ifndef NRF_H_
 #define NRF_H_
 
-//*********************************************NRF24L01*************************************
+//*********************************************NRF24L01宏指令*************************************
 #define TX_ADR_WIDTH    5   	// 5 uints TX address width
 #define RX_ADR_WIDTH    5   	// 5 uints RX address width
 #define TX_PLOAD_WIDTH  32  	// 20 uints TX payload
@@ -50,6 +50,13 @@
 #define FIFO_STATUS     0x17  // FIFO栈入栈出状态寄存器设置
 #define FEATURE			0x1D
 //**************************************************************************************
+
+
+/*****************
+ *	端口宏定义
+ *****************/
+#define NRF_CE_0 GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_6, 0)
+#define NRF_CE_1 GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_6, GPIO_PIN_6)
 
 void Init_NRF24L01(void);
 
