@@ -39,6 +39,8 @@
 #include "driverlib/uart.h"
 #include "driverlib/ssi.h"
 
+#include "Soft_SPI.h"
+
 #include "UART.h"
 #include "JDQ.h"
 #include "NRF.h"

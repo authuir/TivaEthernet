@@ -51,34 +51,8 @@
 #define FEATURE			0x1D
 //**************************************************************************************
 
-
-/*****************
- *	¶Ë¿Úºê¶¨Òå
- *****************/
-#define uint uint8_t
-#define uchar uint8_t
-
-#define CE_0 GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_6, 0)
-#define CE_1 GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_6, GPIO_PIN_6)
-
-#define CSN_0 GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, 0)
-#define CSN_1 GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_3, GPIO_PIN_3)
-
-#define MOSI_0 GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, 0)
-#define MOSI_1 GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1, GPIO_PIN_1)
-
-#define MISO GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_0);
-
-#define SCK_0 GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0)
-#define SCK_1 GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, GPIO_PIN_2)
-
 void Init_NRF24L01(void);
-uint SPI_RW(uint uchar);
-uchar SPI_Read(uchar reg);
 void SetRX_Mode(void);
-uint SPI_RW_Reg(uchar reg, uchar value);
-uint SPI_Read_Buf(uchar reg, uchar *pBuf, uchar uchars);
-uint SPI_Write_Buf(uchar reg,const  uchar *pBuf, uchar uchars);
 unsigned char nRF24L01_RxPacket(unsigned char* rx_buf);
 void nRF24L01_TxPacket(unsigned char * tx_buf);
 

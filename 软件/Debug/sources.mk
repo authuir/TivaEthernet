@@ -99,4 +99,5 @@ S64_DEPS__QUOTED :=
 SUBDIRS := \
 . \
 Peripheralib \
+Driver \
 

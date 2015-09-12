@@ -29,6 +29,7 @@ Common.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/rom.h
 Common.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/pin_map.h
 Common.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/uart.h
 Common.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/ssi.h
+Common.obj: D:/Arduino/TI7/TivaEthernet/Driver/Soft_SPI.h
 Common.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/UART.h
 Common.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/JDQ.h
 Common.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/NRF.h
@@ -64,6 +65,7 @@ C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/rom.h:
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/pin_map.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/uart.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/ssi.h: 
+D:/Arduino/TI7/TivaEthernet/Driver/Soft_SPI.h: 
 D:/Arduino/TI7/TivaEthernet/Peripheralib/UART.h: 
 D:/Arduino/TI7/TivaEthernet/Peripheralib/JDQ.h: 
 D:/Arduino/TI7/TivaEthernet/Peripheralib/NRF.h: 
