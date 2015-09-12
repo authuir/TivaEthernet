@@ -9,30 +9,40 @@
 #define TFT_H_
 
  //定义LCD的尺寸
-#define LCD_W 240
-#define LCD_H 320
+#define LCD_W 320
+#define LCD_H 240
 
-#define LCD_DC_0 GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_2, 0)
-#define LCD_DC_1 GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_2, GPIO_PIN_2)
+#define Screen_W 40
+#define Screen_H 15
 
-#define LCD_REST_0 GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_3, 0)
-#define LCD_REST_1 GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_3, GPIO_PIN_3)
+#define LCD_DC_0 ROM_GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_2, 0)
+#define LCD_DC_1 ROM_GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_2, GPIO_PIN_2)
+
+#define LCD_REST_0 ROM_GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_3, 0)
+#define LCD_REST_1 ROM_GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_3, GPIO_PIN_3)
 
 #define LCD_CS_0 SPI2_CSN_0
 #define LCD_CS_1 SPI2_CSN_1
 
+extern char Screen[15][41];
 extern uint16_t BACK_COLOR, POINT_COLOR;
 
 void Init_TFT();
 void LCD_Clear(uint16_t Color);
-void LCD_DrawPoint(uint16_t x,uint16_t y);//画点
-void LCD_DrawPoint_big(uint16_t x,uint16_t y);//画一个大点
-uint16_t  LCD_ReadPoint(uint16_t x,uint16_t y); //读点
+//画点
+void LCD_DrawPoint(uint16_t x,uint16_t y);
+//画一个大点
+void LCD_DrawPoint_big(uint16_t x,uint16_t y);
+
 void Draw_Circle(uint16_t x0,uint16_t y0,uint8_t r);
 void LCD_DrawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
 void LCD_DrawRectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
 void LCD_Fill(uint16_t xsta,uint16_t ysta,uint16_t xend,uint16_t yend,uint16_t color);
-
+void DisPlay();
+uint16_t RGB_Color(uint8_t R,uint8_t G,uint8_t B);
+void LCD_ShowChar(uint16_t x,uint16_t y,uint8_t num,uint8_t mode);
+void LCD_ShowString(uint16_t x,uint16_t y,const char *p);
+void ScreenFlush();
 
 //画笔颜色
 #define WHITE         	 0xFFFF

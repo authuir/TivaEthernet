@@ -1,9 +1,9 @@
 #include "Common.h"
 uint8_t TMP[256];
 uint32_t TMPs[256];
-uint8_t o;
+
 int main(void) {
-	ROM_SysCtlClockSet(SYSCTL_SYSDIV_2_5 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN |SYSCTL_XTAL_24MHZ);
+	ROM_SysCtlClockSet(SYSCTL_SYSDIV_2_5 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN |SYSCTL_XTAL_16MHZ);
     ROM_FPUEnable();
     ROM_FPULazyStackingEnable();
 
@@ -17,41 +17,20 @@ int main(void) {
 	TMP[255] = 0;
 	//Init_NRF24L01();
 	Init_TFT();
+	LCD_Clear(RGB_Color(48,195,190));
+	LCD_Clear(BLACK);
 
-	LCD_Clear(WHITE);
-	LCD_Clear(BRED);
-
-
+	//LCD_Clear(BRED);
+	//DisPlay();
+	POINT_COLOR = WHITE;
+	strcpy(Screen[0],"   Authuir Operating System");
+	strcpy(Screen[1],"[root@localhost ~]# ls");
+	strcpy(Screen[2],"[root@localhost ~]# cd /");
+	strcpy(Screen[3],"boot etc lost+found opt sbin srv usr");
+	strcpy(Screen[4],"cfg home media proc selinux sys var");
+	strcpy(Screen[5],"bin dev lib mnt root shadowsocks tmp");
+	strcpy(Screen[6],"[root@localhost ~]# ");
 	while(1){
-		POINT_COLOR=RED;
-		for (o=119;o>1;o--)
-			Draw_Circle(120,160,o);
-		POINT_COLOR=BLUE;
-		for (o=1;o<120;o++)
-			Draw_Circle(120,160,o);
-		POINT_COLOR=GRED;
-		for (o=119;o>1;o--)
-			Draw_Circle(120,160,o);
-		POINT_COLOR=GBLUE;
-		for (o=1;o<120;o++)
-			Draw_Circle(120,160,o);
-		POINT_COLOR=MAGENTA;
-		for (o=119;o>1;o--)
-			Draw_Circle(120,160,o);
-		POINT_COLOR=GREEN;
-		for (o=1;o<120;o++)
-			Draw_Circle(120,160,o);
-		POINT_COLOR=CYAN;
-		for (o=119;o>1;o--)
-			Draw_Circle(120,160,o);
-		POINT_COLOR=YELLOW;
-		for (o=1;o<120;o++)
-			Draw_Circle(120,160,o);
-		POINT_COLOR=BROWN;
-		for (o=119;o>1;o--)
-			Draw_Circle(120,160,o);
-		POINT_COLOR=LIGHTBLUE;
-		for (o=1;o<120;o++)
-			Draw_Circle(120,160,o);
+		ScreenFlush();
 	}
 }
