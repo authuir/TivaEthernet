@@ -16,6 +16,7 @@
 #endif
 
 #define SOFT_SSI
+//#define SOFT_SSI_TFT
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -38,10 +39,12 @@
 #include "driverlib/pin_map.h"
 #include "driverlib/uart.h"
 #include "driverlib/ssi.h"
+#include "driverlib/udma.h"
 
 #include "Soft_SPI.h"
 
 #include "UART.h"
+#include "SD.h"
 #include "JDQ.h"
 #include "NRF.h"
 #include "TFT.h"

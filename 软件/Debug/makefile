@@ -11,12 +11,24 @@ $(GEN_CMDS__FLAG) \
 "./Driver/Soft_SPI.obj" \
 "./Peripheralib/UART.obj" \
 "./Peripheralib/TFT.obj" \
+"./Peripheralib/SD.obj" \
 "./Peripheralib/Relay.obj" \
 "./Peripheralib/PWM.obj" \
 "./Peripheralib/NRF.obj" \
 "./Peripheralib/JDQ.obj" \
+"./Peripheralib/ENC.obj" \
 "./Peripheralib/Button.obj" \
 "./Peripheralib/ADC.obj" \
+"./uip/uiplib.obj" \
+"./uip/uip_arp.obj" \
+"./uip/uip.obj" \
+"./uip/uip-split.obj" \
+"./uip/uip-neighbor.obj" \
+"./uip/uip-fw.obj" \
+"./uip/timer.obj" \
+"./uip/tapdev.obj" \
+"./uip/psock.obj" \
+"./uip/clock-arch.obj" \
 "./startup_ccs.obj" \
 "./main.obj" \
 "./Common.obj" \
@@ -32,9 +44,11 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
+-include uip/subdir_vars.mk
 -include Peripheralib/subdir_vars.mk
 -include Driver/subdir_vars.mk
 -include subdir_rules.mk
+-include uip/subdir_rules.mk
 -include Peripheralib/subdir_rules.mk
 -include Driver/subdir_rules.mk
 -include objects.mk
@@ -138,8 +152,8 @@ TivaEthernet.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(TMS470_EXECUTABLE_OUTPUTS__QUOTED) "TivaEthernet.out"
-	-$(RM) "Common.pp" "main.pp" "startup_ccs.pp" "Peripheralib\ADC.pp" "Peripheralib\Button.pp" "Peripheralib\JDQ.pp" "Peripheralib\NRF.pp" "Peripheralib\PWM.pp" "Peripheralib\Relay.pp" "Peripheralib\TFT.pp" "Peripheralib\UART.pp" "Driver\Soft_SPI.pp" 
-	-$(RM) "Common.obj" "main.obj" "startup_ccs.obj" "Peripheralib\ADC.obj" "Peripheralib\Button.obj" "Peripheralib\JDQ.obj" "Peripheralib\NRF.obj" "Peripheralib\PWM.obj" "Peripheralib\Relay.obj" "Peripheralib\TFT.obj" "Peripheralib\UART.obj" "Driver\Soft_SPI.obj" 
+	-$(RM) "Common.pp" "main.pp" "startup_ccs.pp" "uip\clock-arch.pp" "uip\psock.pp" "uip\tapdev.pp" "uip\timer.pp" "uip\uip-fw.pp" "uip\uip-neighbor.pp" "uip\uip-split.pp" "uip\uip.pp" "uip\uip_arp.pp" "uip\uiplib.pp" "Peripheralib\ADC.pp" "Peripheralib\Button.pp" "Peripheralib\ENC.pp" "Peripheralib\JDQ.pp" "Peripheralib\NRF.pp" "Peripheralib\PWM.pp" "Peripheralib\Relay.pp" "Peripheralib\SD.pp" "Peripheralib\TFT.pp" "Peripheralib\UART.pp" "Driver\Soft_SPI.pp" 
+	-$(RM) "Common.obj" "main.obj" "startup_ccs.obj" "uip\clock-arch.obj" "uip\psock.obj" "uip\tapdev.obj" "uip\timer.obj" "uip\uip-fw.obj" "uip\uip-neighbor.obj" "uip\uip-split.obj" "uip\uip.obj" "uip\uip_arp.obj" "uip\uiplib.obj" "Peripheralib\ADC.obj" "Peripheralib\Button.obj" "Peripheralib\ENC.obj" "Peripheralib\JDQ.obj" "Peripheralib\NRF.obj" "Peripheralib\PWM.obj" "Peripheralib\Relay.obj" "Peripheralib\SD.obj" "Peripheralib\TFT.obj" "Peripheralib\UART.obj" "Driver\Soft_SPI.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

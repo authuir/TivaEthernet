@@ -17,6 +17,13 @@ Peripheralib/Button.obj: ../Peripheralib/Button.c $(GEN_OPTS) $(GEN_SRCS)
 	@echo 'Finished building: $<'
 	@echo ' '
 
+Peripheralib/ENC.obj: ../Peripheralib/ENC.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --include_path="D:/Arduino/TI7/TivaEthernet" --include_path="D:/Arduino/TI7/TivaEthernet/Peripheralib" --include_path="D:/Arduino/TI7/TivaEthernet/Driver" --diag_warning=225 --display_error_number --diag_wrap=off --preproc_with_compile --preproc_dependency="Peripheralib/ENC.pp" --obj_directory="Peripheralib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
 Peripheralib/JDQ.obj: ../Peripheralib/JDQ.c $(GEN_OPTS) $(GEN_SRCS)
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM Compiler'
@@ -42,6 +49,13 @@ Peripheralib/Relay.obj: ../Peripheralib/Relay.c $(GEN_OPTS) $(GEN_SRCS)
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM Compiler'
 	"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --include_path="D:/Arduino/TI7/TivaEthernet" --include_path="D:/Arduino/TI7/TivaEthernet/Peripheralib" --include_path="D:/Arduino/TI7/TivaEthernet/Driver" --diag_warning=225 --display_error_number --diag_wrap=off --preproc_with_compile --preproc_dependency="Peripheralib/Relay.pp" --obj_directory="Peripheralib" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Peripheralib/SD.obj: ../Peripheralib/SD.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"C:/ti/ccsv5/tools/compiler/arm_5.0.4/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --include_path="C:/ti/ccsv5/tools/compiler/arm_5.0.4/include" --include_path="D:/Arduino/TI7/TivaEthernet" --include_path="D:/Arduino/TI7/TivaEthernet/Peripheralib" --include_path="D:/Arduino/TI7/TivaEthernet/Driver" --diag_warning=225 --display_error_number --diag_wrap=off --preproc_with_compile --preproc_dependency="Peripheralib/SD.pp" --obj_directory="Peripheralib" $(GEN_OPTS__FLAG) "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

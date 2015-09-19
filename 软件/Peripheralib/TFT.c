@@ -6,7 +6,8 @@
  */
 #include "Common.h"
 
-char Screen[15][41] = {0};
+char Screen[Screen_H+1][Screen_W+1] = {0};
+char * screen_ptr[Screen_H];
 
 const uint8_t asc2_1608[1520]={
 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
@@ -107,6 +108,7 @@ const uint8_t asc2_1608[1520]={
 };
 
 
+
 uint16_t BACK_COLOR, POINT_COLOR;   //背景色，画笔色
 
 void delay_ms(unsigned int s)
@@ -116,7 +118,21 @@ void delay_ms(unsigned int s)
 
 void LCD_Writ_Bus(char da)   //串行数据写入
 {
+#ifdef SOFT_SSI_TFT
+	SPI2_CSN_0;
+#endif
 	SPI2_RW(da);
+#ifdef SOFT_SSI_TFT
+	SPI2_CSN_1;
+#endif
+}
+
+
+
+void LCD_RD_DATA(uint8_t * da)
+{
+	LCD_DC_0;
+	LCD_Writ_Bus(0x04);
 }
 
 void LCD_WR_DATA(uint16_t da)  //发送数据-16位参数
@@ -143,8 +159,24 @@ void LCD_WR_DATA8(char da) //发送数据-8位参数
 	LCD_Writ_Bus(da);
 }
 
+
+void Read_Register(uint8_t Addr, uint8_t xParameter)
+{
+
+	LCD_WR_REG(0xd9);                                                      /* ext command                  */
+	LCD_WR_DATA8(0x10+xParameter);                                        /* 0x11 is the first Parameter  */
+    LCD_DC_0;
+
+    SPI2_RW(Addr);
+    LCD_DC_1;
+    SPI2_RW(0);
+
+    //return data;
+}
+
 void Init_TFT()
 {
+	uint8_t i = 0;
 	SPI2_Init();
 	GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE, GPIO_PIN_2);
 	GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE, GPIO_PIN_3);
@@ -152,6 +184,9 @@ void Init_TFT()
 	delay_ms(20);
 	LCD_REST_1;
 	delay_ms(20);
+
+	for(;i<Screen_H;i++)
+		screen_ptr[i] = Screen[i];
 
 	LCD_WR_REG(0xCB);
     LCD_WR_DATA8(0x39);
@@ -277,10 +312,13 @@ void LCD_Clear(uint16_t Color)
 {
 	uint16_t i,j;
 	Address_set(0,0,LCD_W-1,LCD_H-1);
+	SysCtlDelay(1000);
+	SysCtlDelay(1000);
 	for(i=0;i<LCD_W;i++)
 		for (j=0;j<LCD_H;j++)
 		{
 			LCD_WR_DATA(Color);
+			SysCtlDelay(1);
 		}
 }
 
@@ -529,14 +567,23 @@ void LCD_ShowChar_D(uint16_t x,uint16_t y,uint8_t num)
 	POINT_COLOR=colortemp;
 }
 
+void nextroll()
+{
+	uint16_t i;
+	char * tmp = screen_ptr[0];
+	for(i=0;i<Screen_H-1;i++)
+		screen_ptr[i] =screen_ptr[i+1];
+	screen_ptr[Screen_H-1] =tmp;
+}
 
 void ScreenFlush()
 {
-
 	uint16_t i,j;
 	for(i=0;i<Screen_H;i++)
 		for(j=0;j<Screen_W;j++)
 		{
-			LCD_ShowChar_D(j,i,Screen[i][j]);
+			//LCD_ShowChar_D(j,i,Screen[i][j]);
+			LCD_ShowChar_D(j,i,*(screen_ptr[i]+j));
+			SysCtlDelay(1);
 		}
 }

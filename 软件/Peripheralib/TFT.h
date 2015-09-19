@@ -24,8 +24,10 @@
 #define LCD_CS_0 SPI2_CSN_0
 #define LCD_CS_1 SPI2_CSN_1
 
-extern char Screen[15][41];
+extern char Screen[Screen_H+1][Screen_W+1];
 extern uint16_t BACK_COLOR, POINT_COLOR;
+
+
 
 void Init_TFT();
 void LCD_Clear(uint16_t Color);
@@ -42,7 +44,11 @@ void DisPlay();
 uint16_t RGB_Color(uint8_t R,uint8_t G,uint8_t B);
 void LCD_ShowChar(uint16_t x,uint16_t y,uint8_t num,uint8_t mode);
 void LCD_ShowString(uint16_t x,uint16_t y,const char *p);
+void nextroll();
 void ScreenFlush();
+
+void Read_Register(uint8_t Addr, uint8_t xParameter);
+void LCD_RD_DATA(uint8_t * da);
 
 //»­±ÊÑÕÉ«
 #define WHITE         	 0xFFFF

@@ -25,19 +25,6 @@ uint const RX_ADDRESS[RX_ADR_WIDTH]= {0x34,0x43,0x10,0x10,0x01};	//接收地址
 void Init_NRF24L01(void)
 {
 
-#ifdef HARD_SSI
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI1);
-	GPIOPinConfigure(GPIO_PF1_SSI1TX);
-	GPIOPinConfigure(GPIO_PF2_SSI1CLK);
-	GPIOPinConfigure(GPIO_PF3_SSI1FSS);
-	GPIOPinConfigure(GPIO_PF0_SSI1RX);
-
-	GPIOPinTypeSSI(GPIO_PORTF_BASE, GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3);
-	SSIConfigSetExpClk(SSI1_BASE, SysCtlClockGet(), SSI_FRF_MOTO_MODE_0, SSI_MODE_MASTER, 1000000, 8);
-
-	SSIEnable(SSI1_BASE);
-	SSIDisable(SSI1_BASE);
-#endif
 
 #ifdef SOFT_SSI
 	SPI1_Init();
@@ -54,7 +41,21 @@ void Init_NRF24L01(void)
 	SPI1_RW_Reg(WRITE_REG + RX_PW_P0, RX_PLOAD_WIDTH); 					//设置接收数据长度，本次设置为32字节
 	SPI1_RW_Reg(WRITE_REG + RF_SETUP, 0x07);   							//设置发射速率为1MHZ，发射功率为最大值0dB
 	SPI1_RW_Reg(WRITE_REG + CONFIG, 0x0e);   		 					//IRQ收发完成中断响应，16位CRC，主发送
+#else
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI1);
+	GPIOPinConfigure(GPIO_PF1_SSI1TX);
+	GPIOPinConfigure(GPIO_PF2_SSI1CLK);
+	GPIOPinConfigure(GPIO_PF3_SSI1FSS);
+	//GPIOPinConfigure(GPIO_PF0_SSI1RX);
+	GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_3);
+	SPI1_CSN_0;
+
+	GPIOPinTypeSSI(GPIO_PORTF_BASE, GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2);
+	SSIConfigSetExpClk(SSI1_BASE, SysCtlClockGet(), SSI_FRF_MOTO_MODE_0, SSI_MODE_MASTER, 1000000, 8);
+
+	SSIEnable(SSI1_BASE);
 #endif
+
 
 }
 

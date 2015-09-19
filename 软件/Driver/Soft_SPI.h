@@ -43,6 +43,19 @@
 #define SPI2_SCK_1 ROM_GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_4, GPIO_PIN_4)
 /**************************************************/
 
+/************************SPI2**********************/
+#define SPI3_CSN_0 ROM_GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_1, 0)
+#define SPI3_CSN_1 ROM_GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_1, GPIO_PIN_1)
+
+#define SPI3_MOSI_0 ROM_GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_3, 0)
+#define SPI3_MOSI_1 ROM_GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_3, GPIO_PIN_3)
+
+#define SPI3_MISO ROM_GPIOPinRead(GPIO_PORTD_BASE, GPIO_PIN_2);
+
+#define SPI3_SCK_0 ROM_GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_0, 0)
+#define SPI3_SCK_1 ROM_GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_0, GPIO_PIN_0)
+/**************************************************/
+
 #define SPI0 0x00
 #define SPI1 0x01
 #define SPI2 0x02
@@ -61,5 +74,12 @@ uchar SPI2_Read(uchar reg);
 uint SPI2_RW_Reg(uchar reg, uchar value);
 uint SPI2_Read_Buf(uchar reg, uchar *pBuf, uchar uchars);
 uint SPI2_Write_Buf(uchar reg,const  uchar *pBuf, uchar uchars);
+
+void SPI3_Init();
+uint SPI3_RW(uint uchar);
+uchar SPI3_Read(uchar reg);
+uint SPI3_RW_Reg(uchar reg, uchar value);
+uint SPI3_Read_Buf(uchar reg, uchar *pBuf, uint32_t uchars);
+uint SPI3_Write_Buf(uchar reg,const uchar *pBuf, uint32_t uchars);
 
 #endif /* SOFT_SPI_H_ */

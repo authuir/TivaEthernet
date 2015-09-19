@@ -29,8 +29,10 @@ main.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/rom.h
 main.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/pin_map.h
 main.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/uart.h
 main.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/ssi.h
+main.obj: C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/udma.h
 main.obj: D:/Arduino/TI7/TivaEthernet/Driver/Soft_SPI.h
 main.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/UART.h
+main.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/SD.h
 main.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/JDQ.h
 main.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/NRF.h
 main.obj: D:/Arduino/TI7/TivaEthernet/Peripheralib/TFT.h
@@ -65,8 +67,10 @@ C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/rom.h:
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/pin_map.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/uart.h: 
 C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/ssi.h: 
+C:/ti/ccsv5/tools/compiler/arm_5.0.4/include/driverlib/udma.h: 
 D:/Arduino/TI7/TivaEthernet/Driver/Soft_SPI.h: 
 D:/Arduino/TI7/TivaEthernet/Peripheralib/UART.h: 
+D:/Arduino/TI7/TivaEthernet/Peripheralib/SD.h: 
 D:/Arduino/TI7/TivaEthernet/Peripheralib/JDQ.h: 
 D:/Arduino/TI7/TivaEthernet/Peripheralib/NRF.h: 
 D:/Arduino/TI7/TivaEthernet/Peripheralib/TFT.h: 
